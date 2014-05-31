@@ -314,6 +314,22 @@ public class Node {
 		
 	}
 	
+	public boolean contains( Node node ) {
+		
+		if ( this == node )
+			return true;
+		else {
+			
+			for ( Node child : children ) {
+				
+				boolean contains = child.contains( node );
+				if ( contains ) return true;
+			}
+			
+			return false;
+		}
+	}
+	
 	public synchronized void move( Node target ) {
 		
 		if ( target != null ) {
@@ -333,6 +349,11 @@ public class Node {
 		else return parent.getRoot();
 	}
 	
+	@Override
+	public String toString() {
+		return toString( 0 );
+	}
+	
 	private void normalizeDescription() {
 		
 		while ( description.contains( "  " ) )
@@ -341,12 +362,7 @@ public class Node {
 		description = description.replace( "\t", "" );
 		description = description.replace( "\n ", "\n" );	
 
-	}
-	
-	@Override
-	public String toString() {
-		return toString( 0 );
-	}
+	}	
 	
 	private String toString( int depth ) {
 		String result = "";
