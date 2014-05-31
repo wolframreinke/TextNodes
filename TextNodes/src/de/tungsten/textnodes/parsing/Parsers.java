@@ -50,7 +50,7 @@ public class Parsers {
 				connection.write( "This was not understandable." );
 		} 
 		catch ( Exception e ) {
-			connection.write( "Sorry, TOCS recognized an internal error." );
+			connection.write( "Sorry, TextNodes recognized an internal error." );
 		}
 	}
 }
