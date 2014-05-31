@@ -6,8 +6,8 @@ import java.net.Socket;
 import java.util.HashSet;
 import java.util.Set;
 
-import de.tungsten.textnodes.control.Configuration;
 import de.tungsten.textnodes.control.ConfigurationType;
+import de.tungsten.textnodes.control.IConfiguration;
 import de.tungsten.textnodes.control.LogLevel;
 import de.tungsten.textnodes.control.Logger;
 
@@ -19,12 +19,12 @@ public abstract class Server extends Thread {
 	private static final String CONFIG_PORT		= "port";
 	private static final int	DEFAULT_PORT	= 10024;
 	
-	private final Configuration configuration;
+	private final IConfiguration configuration;
 	private final Logger logger;
 	
 	private Set<IConnection> connections = new HashSet<IConnection>();
 	
-	public Server( Configuration config, Logger logger ) {
+	public Server( IConfiguration config, Logger logger ) {
 		this.configuration = config;
 		this.logger = logger;
 	}			
@@ -33,7 +33,7 @@ public abstract class Server extends Thread {
 	public void run() {
 		
 		try {
-			int port = (int) configuration.getValue( 
+			int port = (int) configuration.getEntry( 
 					CONFIG_PORT, ConfigurationType.INTEGER, DEFAULT_PORT );
 			
 			ServerSocket server = new ServerSocket( port );
