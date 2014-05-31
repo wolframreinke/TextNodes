@@ -1,0 +1,2 @@
+* 	Should Configuration and others be implemented using the singleton pattern?
+	Others are Logger and Parsers

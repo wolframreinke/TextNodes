@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/de/tungsten/textnodes/connect/IConnection.java=ISO-8859-1
+encoding//src/de/tungsten/textnodes/connect/Server.java=ISO-8859-1
+encoding//src/de/tungsten/textnodes/control/LogLevel.java=ISO-8859-1
+encoding//src/de/tungsten/textnodes/parsing/InstructionParser.java=ISO-8859-1
