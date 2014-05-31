@@ -3,7 +3,7 @@ package de.tungsten.textnodes.nodes;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LockableNode extends OpenableNode {
+public class LockableNode extends CloseableNode {
 
 	private boolean locked;
 
