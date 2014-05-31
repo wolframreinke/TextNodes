@@ -10,6 +10,10 @@ public class Room extends LockableNode {
 	
 	private EnumMap<Direction, Room> adjacentRooms = new EnumMap<Direction, Room>( Direction.class );
 	
+	public Room( String[] names, String description ) {
+		this( null, names, description, false, false );
+	}
+	
 	public Room( String[] names, String description, 
 			boolean closed, boolean locked ) {
 		this( null, names, description, closed, locked );
