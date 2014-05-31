@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Configuration {
+public class Configuration implements IConfiguration {
 
 	public static final String LOG_NAME = "(CORE) Configuration";
 
@@ -26,7 +26,8 @@ public class Configuration {
 		return instance;
 	}
 
-	public Object getValue( String key, ConfigurationType type,
+	@Override
+	public Object getEntry( String key, ConfigurationType type,
 			Object defaultValue ) {
 
 		if ( useDefaultValues )
